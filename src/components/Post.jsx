@@ -2,21 +2,21 @@ import { Comment } from './Comment'
 import { Avatar } from './Avatar'
 import styles from './Post.module.css'
 
-export function Post() {
+export function Post({ author, publishedAt }) {
     return (
         <article className={styles.post}>
             <header>
                 <div className={styles.author}>
-                    <Avatar
-                        src="https://avatars.githubusercontent.com/u/31519661?v=4" 
-                    />
+                    <Avatar src={author.avatarUrl} />
                     <div className={styles.authorInfo}>
-                        <strong>Filipe Almeida</strong>
-                        <span>Web Developer</span>
+                        <strong>{author.name}</strong>
+                        <span>{author.role}</span>
                     </div>
                 </div>
 
-                <time title="01 de fevereiro as 22:48" dateTime="2023-02-01 22:48:00">Publicado há 1h</time>
+                <time title="01 de fevereiro as 22:48" dateTime="2023-02-01 22:48:00">
+                    
+                </time>
             </header>
 
             <div className={styles.content}>
